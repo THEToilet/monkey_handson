@@ -24,7 +24,6 @@ func TestNextToken(t *testing.T) {
 		{token.EOF, ""},
 	}
 
-	}
 
 	l := New(input)
 
