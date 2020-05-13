@@ -25,7 +25,7 @@ func New(l *lexer.Lexer) *Parser {
 
 func (p *Parser) nextToken() {
 	p.curToken = p.peekToken
-	p.peekToken = p.l.NewToken()
+	p.peekToken = p.l.NextToken()
 }
 
 func (p *Parser) ParseProgram() *ast.Program {
