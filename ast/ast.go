@@ -1,5 +1,7 @@
 package ast
 
+import "../token"
+
 type Node interface {
 	TokenLiteral() string
 }
@@ -15,7 +17,7 @@ type Expression interface {
 }
 
 type Program struct {
-	Statements []Statemant
+	Statements []Statement
 }
 
 func (p *Program) TokenLiteral() string {
