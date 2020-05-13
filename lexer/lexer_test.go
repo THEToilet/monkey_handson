@@ -67,7 +67,7 @@ func TestNextToken(t *testing.T) {
 		{token.IDENT, "5"},
 		{token.LT, "<"},
 		{token.SEMICOLON, "10"},
-		{token.RT, ">"},
+		{token.GT, ">"},
 		{token.IDENT, "5"},
 		{token.SEMICOLON, ";"},
 		{token.EOF, ""},
