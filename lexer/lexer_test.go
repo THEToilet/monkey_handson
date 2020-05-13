@@ -1,15 +1,14 @@
 package lexer
 
-import(
-	"testing"
+import (
 	"../token"
-	)
-
+	"testing"
+)
 
 func TestNextToken(t *testing.T) {
 	input := `=+(){},;`
 
-	tests := [] struct {
+	tests := []struct {
 		expectedType   token.TokenType
 		expectedLitera string
 	}{
@@ -24,10 +23,9 @@ func TestNextToken(t *testing.T) {
 		{token.EOF, ""},
 	}
 
-
 	l := New(input)
 
-	for i,tt := range test{
+	for i, tt := range test {
 		tok := l.NextToken()
 
 		if tok.Type != tt.expectedType {

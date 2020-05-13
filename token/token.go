@@ -2,7 +2,7 @@ package token
 
 type TokenType string
 
-type Token struct{
+type Token struct {
 	Type    TokenType
 	Literal string
 }
@@ -12,12 +12,12 @@ const (
 	EOF     = "EOF"
 
 	// 識別子　；リテラル
-	IDENT = "IDENT"  // ass, foobar, x, y ...
-	INT   = "INT"    // 1234456
+	IDENT = "IDENT" // ass, foobar, x, y ...
+	INT   = "INT"   // 1234456
 
 	// 演算子
-	ASSIGN  = "="
-	PLUS    = "+"
+	ASSIGN = "="
+	PLUS   = "+"
 
 	// デリミタ
 	COMMA     = "."
@@ -31,5 +31,4 @@ const (
 	// キーワード
 	FUNCTION = "FINCTION"
 	LET      = "LET"
-
 )
