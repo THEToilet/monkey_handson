@@ -4,23 +4,23 @@ import (
 	"../ast"
 	"../lexer"
 	"../token"
-	)
+)
 
 type Parser struct {
 	l *lexer.Lexer
 
-	curToken   token.Token
-	peekToken  token.Token
+	curToken  token.Token
+	peekToken token.Token
 }
 
 func New(l *lexer.Lexer) *Parser {
 	p := &Parser{l: l}
 
 	// 2つトークンを読み込む。curTokenとpeekTokenの両方がセットされる。
- p.nextToken()
- p.nextToken()
+	p.nextToken()
+	p.nextToken()
 
- return p
+	return p
 }
 
 func (p *Parser) nextToken() {
