@@ -22,9 +22,10 @@ func TestNextToken(t *testing.T) {
 	}{
 		{token.LET, "let"},
 		{token.IDENT, "five"},
+		{token.ASSIGN, "="},
 		{token.INT, "5"},
 		{token.SEMICOLON, ";"},
-		{token.LET, "LET"},
+		{token.LET, "let"},
 		{token.IDENT, "ten"},
 		{token.ASSIGN, "="},
 		{token.INT, "10"},
