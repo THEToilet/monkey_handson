@@ -18,9 +18,9 @@ func TestNextToken(t *testing.T) {
 	5 < 10 > 5;
 
 	if ( 5 < 10 ) {
-		return false;
-	} else {
 		return true;
+	} else {
+		return false;
 	}
 	`
 
@@ -93,7 +93,6 @@ func TestNextToken(t *testing.T) {
 		{token.FALSE, "false"},
 		{token.SEMICOLON, ";"},
 		{token.RBRACE, "}"},
-		{token.SEMICOLON, ";"},
 		{token.EOF, ""},
 	}
 
