@@ -88,10 +88,10 @@ func TestReturnStatement(t *testing.T) {
 	`
 
 	l := lexer.New(input)
-	p := New(input)
+	p := New(l)
 
 	program := p.ParseProgram()
-	checkParseErrors(t, p)
+	checkParserErrors(t, p)
 
 	if len(program.Statements) != 3 {
 		t.Fatalf("program.Statemnets does not ontain 3 statements. got=%d", len(program.Statements))
@@ -100,7 +100,7 @@ func TestReturnStatement(t *testing.T) {
 	for _, stmt := range program.Statements {
 		returnStmt, ok := stmt.(*ast.ReturnStatement)
 		if !ok {
-			t.Errorf("stmt not *ast.returnStatement . got=%T", stmt
+			t.Errorf("stmt not *ast.returnStatement . got=%T", stmt)
 			continue
 		}
 		if returnStmt.TokenLiteral() != "return" {
