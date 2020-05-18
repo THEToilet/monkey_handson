@@ -77,7 +77,7 @@ func (p *Parser) parseStatement() ast.Statement {
 	case token.RETURN:
 		return p.parseReturnStatement()
 	default:
-		return o.parseExpressionStatement()
+		return p.parseExpressionStatement()
 	}
 }
 
