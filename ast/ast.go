@@ -7,7 +7,7 @@ import (
 
 type Node interface {
 	TokenLiteral() string
-	String string
+	String() string
 }
 
 type Statement interface {
@@ -91,7 +91,7 @@ func (ls *LetStatement) String() string {
 	return out.String()
 }
 
-func (rs *ReturnStatement) string {
+func (rs *ReturnStatement) String() string {
 	var out bytes.Buffer
 
 	out.WriteString(rs.TokenLiteral() + " ")
