@@ -116,7 +116,7 @@ func TestIdentifierExpression(t *testing.T) {
 	l := lexer.New(input)
 	p := New(l)
 	program := p.ParseProgram()
-	checkParseErrors(t, p)
+	checkParserErrors(t, p)
 
 	if len(program.Statements) != 1 {
 		t.Fatalf("Program has not enough statemnets. got=%d", len(program.Statements))
@@ -129,12 +129,12 @@ func TestIdentifierExpression(t *testing.T) {
 
 	ident, ok := stmt.Expression.(*ast.Identifier)
 	if !ok {
-		t.Fatals("exp not *ast.Identifier. got=%T", stmt.Expression)
+		t.Fatalf("exp not *ast.Identifier. got=%T", stmt.Expression)
 	}
 	if ident.Value != "foobar" {
-		t.Errof("ident.Value not %s. got%s", "foobar", indent.Value)
+		t.Errorf("ident.Value not %s. got%s", "foobar", ident.Value)
 	}
 	if ident.TokenLiteral() != "foobar" {
-		t.Errof("indet.TokenLiteral not %s. got=%s", "foobar", ident.TokenLiteral())
+		t.Errorf("indet.TokenLiteral not %s. got=%s", "foobar", ident.TokenLiteral())
 	}
 }
