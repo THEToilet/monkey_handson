@@ -120,7 +120,7 @@ func (es *ExpressionStatement) String() string {
 
 func (i *Identifier) String() string { return i.Value }
 
-func (il *InetgerLiteral) expressionNode()			{}
+func (il *IntegerLiteral) expressionNode()			{}
 func (il *IntegerLiteral) TokenLiteral() string { return il.Token.Literal }
 func (il *IntegerLiteral) String() string       { return il.Token.Literal }
 
