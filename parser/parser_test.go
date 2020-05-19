@@ -145,10 +145,10 @@ func TestIntegerLiteralExpression(t *testing.T) {
 	l := lexer.New(input)
 	p := New(l)
 	program := p.ParseProgram()
-	checkParseErrors(t, p)
+	checkParserErrors(t, p)
 
 	if len(program.Statements) != 1 {
-		t.Fatals("program has not enough statements. got=%d", len(program.Statements))
+		t.Fatalf("program has not enough statements. got=%d", len(program.Statements))
 	}
 
 	stmt, ok := program.Statements[0].(*ast.ExpressionStatement)
